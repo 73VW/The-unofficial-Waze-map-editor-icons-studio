@@ -2,11 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
     tags:
-      - "v*"
-  workflow_dispatch:
+      - "v*.*.*"
 
 permissions:
   contents: read
