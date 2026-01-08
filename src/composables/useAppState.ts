@@ -3,6 +3,8 @@ import type { AppState, SizeOption, Lang } from '../types';
 
 const CSS_URL = 'https://web-assets.waze.com/waze-web-icons/v16.11.1/waze-web-icons.css';
 
+const fontVersion = ref<string>('');
+
 const state = ref<AppState>({
   icons: [],
   filtered: [],
@@ -96,6 +98,12 @@ export function useAppState() {
       loading.value = true;
       error.value = null;
 
+      // Extract version from CSS_URL (e.g., "v16.11.1")
+      const versionMatch = CSS_URL.match(/\/v([\d.]+)\//);
+      if (versionMatch) {
+        fontVersion.value = `v${versionMatch[1]}`;
+      }
+
       const response = await fetch(CSS_URL);
       if (!response.ok) throw new Error('CSS_LOAD_ERROR');
       const css = await response.text();
@@ -187,6 +195,7 @@ export function useAppState() {
     utilityPalette,
     loading,
     error,
+    fontVersion,
     setSelected,
     setSelectedUtility,
     setSize,

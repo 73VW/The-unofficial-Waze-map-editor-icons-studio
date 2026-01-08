@@ -76,9 +76,10 @@
 import { ref, computed, onMounted, onUnmounted, defineEmits, defineProps } from "vue";
 import { useI18n } from "../composables/useI18n";
 import { useAppState } from "../composables/useAppState";
+import { APP_VERSION } from "../version";
 
 const { t } = useI18n();
-const { setFiltered, setFilteredUtilities } = useAppState();
+const { setFiltered, setFilteredUtilities, fontVersion: appFontVersion } = useAppState();
 
 const props = defineProps<{
   activeTab: 'preview' | 'utilities' | 'settings';
@@ -93,8 +94,8 @@ const searchQuery = ref("");
 const aboutMenuOpen = ref(false);
 const aboutDropdown = ref<HTMLElement | null>(null);
 
-const version = "1.0.0";
-const fontVersion = "v2.326-5";
+const version = APP_VERSION;
+const fontVersion = appFontVersion;
 
 const searchPlaceholder = computed(() => {
   return props.activeContentTab === 'utilities'
