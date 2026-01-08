@@ -5,7 +5,7 @@ on:
     branches:
       - master
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 permissions:
@@ -26,12 +26,7 @@ jobs:
 
       - name: Extract TAG_VERSION
         id: extract_version
-        run: |
-          if [[ "${{ github.ref }}" =~ ^refs/tags/v ]]; then
-            echo "tag_version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-          else
-            echo "tag_version=0.0.0-dev" >> $GITHUB_OUTPUT
-          fi
+        run: echo "tag_version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
       - name: Set version in package.json from tag
         run: |
@@ -41,8 +36,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci

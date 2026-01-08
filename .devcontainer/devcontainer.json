@@ -1,5 +1,5 @@
 {
-    "name": "Waze Web Icons Preview",
+    "name": "The unofficial Waze map editor icons studio",
     "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
     "postCreateCommand": "npm install",
     "customizations": {

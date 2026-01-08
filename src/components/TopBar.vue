@@ -63,7 +63,7 @@
                 </a>
               </div>
 
-              <p class="about-copyright">{{ t('aboutCopyrightYear') }} {{ t("aboutCopyright") }}</p>
+              <p class="about-copyright">© {{ currentYear }} - {{ t("aboutCopyright") }}</p>
             </div>
           </div>
         </div>
@@ -96,6 +96,7 @@ const aboutDropdown = ref<HTMLElement | null>(null);
 
 const version = APP_VERSION;
 const fontVersion = appFontVersion;
+const currentYear = new Date().getFullYear();
 
 const searchPlaceholder = computed(() => {
   return props.activeContentTab === 'utilities'
