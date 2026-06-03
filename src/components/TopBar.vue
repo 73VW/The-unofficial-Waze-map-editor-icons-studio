@@ -13,7 +13,7 @@
         <div class="brand">
           <span class="brand-unofficial">{{ t('topBarEyebrow') }}</span>
           <img
-            src="https://web-assets.waze.com/webapps/wme/v2.326-5-gb5354f7241-20251209094239-production/font/a7e3ce2dd90f3cab/logo.svg"
+            src="https://web-assets.waze.com/webapps/wme/v2.352-6-g0facb511a2-20260527072803-production/font/a7e3ce2dd90f3cab/logo.svg"
             alt="wazemapeditor"
             class="brand-logo"
           />
