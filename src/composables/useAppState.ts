@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue';
 import type { AppState, SizeOption, Lang } from '../types';
 
-const CSS_URL = 'https://web-assets.waze.com/waze-web-icons/v16.11.1/waze-web-icons.css';
+const CSS_URL = 'https://web-assets.waze.com/waze-web-icons/v18.3.0/waze-web-icons.css';
 
 const fontVersion = ref<string>('');
 
